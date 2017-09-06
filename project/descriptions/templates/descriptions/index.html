@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4> All Descriptions !!!</h4>
+
+{%for description in descriptions%}
+  <p>
+    {{description.name}} - {{description.description}}
+  </p>
+{% endfor%}
+
+{% endblock %}
