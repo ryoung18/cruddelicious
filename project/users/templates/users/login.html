@@ -1,32 +1,47 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  Login
+{% endblock%}
+
+{% block head %}
+  {% if animation == 'login' %}
+     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/login.css') }}">
+  {% else %}
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/fadein.css') }}">
+  {% endif %}
+{% endblock%}
+
+
 {% block content %}
-
-
-<div class="container">
-  <form method="POST" action="{{url_for('users.login')}}">
-    {{ form.csrf_token }}
-    <p>{{ form.email(placeholder="email") }}
-      <span>
-        {% if form.email.errors %}
-          {% for error in form.email.errors %}
-            {{ error }}
-          {% endfor %}
-        {% endif %}
-      </span>
-    </p>
-    <p>
-      {{ form.password(placeholder="password") }}
-      <span>
-        {% if form.password.errors %}
-          {% for error in form.password.errors %}
-            {{ error }}
-          {% endfor %}
-        {% endif %}
-      </span>
-    </p>
-    <button type="submit">Log In!</button> <button><a href="{{url_for('users.signup')}}"> Sign Up</a></button>
-  </form>
-<div>
+  <div id="pop-up">
+    <div class="container1">
+      <h1>Welcome</h1>
+      <p>Please login</p>
+      <!-- <input type="email" placeholder="email" required> -->
+        <form method="POST" action="{{url_for('users.login')}}">
+          {{ form.csrf_token }}
+          <p>{{ form.email(placeholder="email") }}
+            <br>
+              {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                  {{ error }}
+                {% endfor %}
+              {% endif %}
+          </p>
+          <p>
+            {{ form.password(placeholder="password") }}
+            <br>
+              {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                  {{ error }}
+                {% endfor %}
+              {% endif %}
+          </p>
+          <button type="submit">Log In!</button>&nbsp;&nbsp;&nbsp;
+          <button><a href="{{url_for('users.signup')}}"> Sign Up</a></button>
+        </form>
+    </div>
+  </div>
 
 {% endblock %}

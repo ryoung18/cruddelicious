@@ -46,20 +46,23 @@ def signup():
 @users_blueprint.route('/login', methods = ['GET', 'POST'])
 def login():
   form = UserLogin(request.form)
-  if request.method == 'POST' and form.validate():
-    user = User.authenticate(form.data['email'], form.data['password'])
-    if user:
-      login_user(user)
-      flash("Welcome!")
-      return redirect(url_for('users.show', id=user.id))
+  if request.method == 'POST':
+    if form.validate():
+      user = User.authenticate(form.data['email'], form.data['password'])
+      if user:
+        login_user(user)
+        flash("Welcome!")
+        return redirect(url_for('users.show', id=user.id))
+      else:
+        flash("Invalid Credentials")
     else:
-      flash("Invalid Credentials")
-  return render_template('users/login.html', form=form)
+      return render_template('users/login.html', form=form, animation='fadein')
+  return render_template('users/login.html', form=form, animation='login')
 
 @users_blueprint.route('/logout')
 @login_required
 def logout():
-  flash('You have been signed out.')
+  # flash('You have been signed out.')
   logout_user()
   return redirect(url_for('users.index'))
 
