@@ -1,0 +1,60 @@
+body{margin: 0; position: relative;}
+h1{
+  font-size: 48px;
+  margin: 10px 0;
+}
+p{
+  margin-bottom: 40px;
+}
+#pop-up{
+  position: relative;
+  top: 200px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#pop-up .container1{
+  background: #e3f2fd;
+  padding: 30px;
+  position: absolute;
+  top: 50px;
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 0;
+
+}
+#pop-up input{
+  padding: 10px;
+  border: 0;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+}
+button{
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  background: #333;
+  margin-left: -5px;
+  margin-left: -5px;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+}
+
+#pop-up{
+  top: -600px;
+  transform-origin: 10px 10px;
+  animation: drop 1.2s .8s ease forwards;
+}
+
+
+@keyframes drop{
+  0%{opacity: 0;}
+  100%{transform: translateY(550px); opacity: 1}
+}
+
+@keyframes fadeIn{
+  0%{opacity: 0;}
+  100%{transform: translateY(550px); opacity: 1}
+}

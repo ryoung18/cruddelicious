@@ -1,0 +1,51 @@
+body{margin: 0; position: relative;}
+h1{
+  font-size: 48px;
+  margin: 10px 0;
+}
+p{
+  margin-bottom: 40px;
+}
+#pop-up{
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#pop-up .container1{
+  background: #e3f2fd;
+  padding: 30px;
+  position: absolute;
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 0;
+  opacity: 10;
+}
+#pop-up input{
+  padding: 10px;
+  border: 0;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+}
+button{
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  background: #333;
+  margin-left: -5px;
+  margin-left: -5px;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+}
+
+#pop-up{
+  animation: fadeIn 2s ease
+}
+
+
+@keyframes fadeIn{
+  0%{opacity: 0;}
+  100%{opacity: 1}
+}
