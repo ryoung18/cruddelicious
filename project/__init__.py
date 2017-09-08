@@ -40,6 +40,10 @@ app.register_blueprint(skus_blueprint, url_prefix='/descriptions/<int:descriptio
 from project.transactions.views import transactions_blueprint
 app.register_blueprint(transactions_blueprint, url_prefix='/descriptions/<int:description_id>/skus/<int:sku_id>/transactions')
 
+from project.transactions.views import transactions_blueprint
+app.register_blueprint(transactions_blueprint, url_prefix='/transactions/pick')
+
+
 from project.inventories.views import inventories_blueprint
 app.register_blueprint(inventories_blueprint, url_prefix='/<int:sku_id>/inventories')
 
@@ -48,3 +52,19 @@ def root():
   if(current_user.is_authenticated):
       return render_template('users/index.html')
   return redirect(url_for('users.index'))
+
+
+from project.models import Transaction
+@app.route('/orders')
+def orders():
+  if(current_user.is_authenticated):
+    orders = Transaction.query.all()
+    return render_template('transactions/order.html', orders = orders)
+  return redirect(url_for('users.login'))
+
+@app.route('/sales')
+def sales():
+  if(current_user.is_authenticated):
+    orders = Transaction.query.all()
+    return render_template('transactions/sale.html', orders = orders)
+  return redirect(url_for('users.login'))

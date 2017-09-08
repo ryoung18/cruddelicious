@@ -12,3 +12,4 @@ class UserForm(FlaskForm):
 class UserLogin(FlaskForm):
   email = StringField('E-mail', [validators.Length(min=3)])
   password = PasswordField('Password', validators=[DataRequired()])
+

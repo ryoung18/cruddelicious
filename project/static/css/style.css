@@ -1,3 +1,99 @@
-.lightBlue{
-  background: #e3f2fd
+.light-blue{
+  background: #e3f2fd;
 }
+
+.outline-blue-border{
+  border: 2px solid #cce6ff;
+}
+
+body{
+  /*https://uigradients.com/ */
+/*  background: #e3f2fd;
+  background: -webkit-linear-gradient(to right, #e3f2fd, #f2fcfe);
+  background: linear-gradient(to right, #e3f2fd, #f2fcfe);
+
+*/
+
+}
+
+.nav.navbar-nav.navbar-nav li a {
+    color: #80bfff;
+   color: #A9A9A9;
+}
+
+nav a{
+  font-size: 1.1em;
+}
+
+
+h1{
+  font-size: 48px;
+  margin: 10px 0;
+}
+p{
+  margin-bottom: 40px;
+}
+
+button, .button{
+  padding: 10px;
+  border: 0;
+  color: #fff;
+  margin-left: 10px;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #333;
+  font-size: 18px;
+  text-decoration: none;
+  line-height: initial;
+}
+
+
+.button-black{
+  background: #333;
+  border: none;
+}
+
+.button-blue{
+  background: #007bff;
+  border: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-default{
+  border-bottom: 3px solid #cce6ff;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #e3f2fd;
+ }
+
+@media screen and (min-width: 100px) {
+  .panel-bubble{
+    padding: 0 15px 30px 10px;
+    border-radius: 20px 20px 20px 0;
+    opacity: .8;
+  }
+
+@media screen and (min-width: 768px) {
+  .panel-bubble{
+    padding: 15px 15px 50px 50px;
+    border-radius: 30px 30px 30px 0;
+    opacity: .8;
+  }
+
+.navbar-toggle{
+  border: 1px solid white !important;
+}
+
+
+
+.panel-bubble{
+  background: #e3f2fd;
+  border: solid 3px #cce6ff;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div class="container">
+
+    <div class="panel panel-default outline-blue-border" >
+      <div class="panel-body">
+        <img src="{{ url_for('static', filename='img/')}}sales.png" class="img-responsive center-block" alt="Responsive image">
+      </div>
+    </div>
+
+      <table class="table table-striped table-bordered table-hover table-condensed outline-blue-border">
+        <tr>
+          <th>Date</th>
+          <th>SKU</th>
+          <th>QTY</th>
+          <th>Amount</th>
+        </tr>
+    {%for order in orders%}
+        <tr>
+          <td>{{order.date}} </td>
+          <td>{{order.sku.sku}} </td>
+          <td>{{order.qty}}</td>
+          <td>$3,000</td>
+        </tr>
+    {% endfor %}
+      </table>
+  </div>
+
+
+
+
+
+{% endblock %}
